@@ -20,7 +20,6 @@ def money1(money):
             print("You can only bet £1-1000")
     return amount
     
-
 def roulette(money):
     again = True
     while again == True:
@@ -101,7 +100,7 @@ Choose one of them:
             again = False
 
 
-        return money
+    return money
 
 
 def BlackJack(money):
@@ -188,9 +187,10 @@ def BlackJack(money):
                 winnings = 0
                 break
             else:
-                if amount > 18:
-                    times = 22-amount
-                    winnings = bett * ((1/times)+1)
+                if amount == 19:
+                    winnings = bett * 1.4
+                elif amount == 20:
+                    winnings = bett * 1.6
                 break
         money = money+winnings
         money = round(money,2)
@@ -263,7 +263,6 @@ What do you want to play?
 - Roulette (1)
 - Blackjack (2)
 - Rock Paper Scissors (3)
-
 - cash out""")
     game = int(input("- "))
     if game == 1:
